@@ -10,6 +10,12 @@
       "factory": "./01-create-file/index#createFile",
       "schema": "./01-create-file/schema.json",
       "aliases": ["cf"]
+    },
+    "prompts-depth": {
+      "description": "A blank schematic.",
+      "factory": "./02-prompts-depth/index#promptsDepth",
+      "schema": "./02-prompts-depth/schema.json",
+      "aliases": ["p-data"]
     }
   }
 }

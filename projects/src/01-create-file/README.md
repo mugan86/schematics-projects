@@ -1,5 +1,7 @@
 # Create File
 
+## Arguments and schemas
+
 Create schema.json to apply required property => path
 (Not use prompt, we pass value with arguments)
 ```json
@@ -94,5 +96,43 @@ Result:
 ```css
 Debug mode enabled by default for local collections.
 CREATE test-value.ts (44 bytes)
+Dry run enabled by default in debug mode. No files written to disk.
+```
+
+## User prompts and aliases
+
+In this point we learn to implement prompt option to add data from keyboard by user without use arguments in command.
+
+Change in schema.json and add "x-prompt" inside "path" option:
+
+```json
+{
+    "$schema": "http://json-schema.org/schema",
+    "$id": "my-collection-create-file",
+    "title": "Creates a file using the given path",
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "x-prompt": "Enter the file path:",
+        "description": "The path of the file to create."
+      }
+    },
+    "required": ["path"]
+  }
+```
+
+Add schematics command execution without argument:
+
+```bash
+schematics .:create-file
+```
+In terminal that show:
+```bash
+projects git:(develop) ✗ schematics .:create-file
+
+Debug mode enabled by default for local collections.
+? Enter the file path: anartz    <====== (x-prompt)
+CREATE anartz (44 bytes)
 Dry run enabled by default in debug mode. No files written to disk.
 ```

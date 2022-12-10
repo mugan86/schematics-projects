@@ -99,7 +99,7 @@ CREATE test-value.ts (44 bytes)
 Dry run enabled by default in debug mode. No files written to disk.
 ```
 
-## User prompts and aliases
+## User prompts
 
 In this point we learn to implement prompt option to add data from keyboard by user without use arguments in command.
 
@@ -130,6 +130,45 @@ schematics .:create-file
 In terminal that show:
 ```bash
 projects git:(develop) ✗ schematics .:create-file
+
+Debug mode enabled by default for local collections.
+? Enter the file path: anartz    <====== (x-prompt)
+CREATE anartz (44 bytes)
+Dry run enabled by default in debug mode. No files written to disk.
+```
+
+## Aliases
+
+Alias is the short term to reference select schematic. Add alias in src/collection.json file:
+
+```json
+"aliases": ["cf"]
+```
+
+Implement in file:
+```json
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    ...
+    "create-file": {
+      "description": "Schematic to work with create files option",
+      "factory": "./01-create-file/index#createFile",
+      "schema": "./01-create-file/schema.json",
+      "aliases": ["cf"]
+    }
+  }
+}
+```
+
+Check with alias:
+
+```bash
+schematics .:cf
+```
+In terminal that show:
+```bash
+projects git:(develop) ✗ schematics .:cf
 
 Debug mode enabled by default for local collections.
 ? Enter the file path: anartz    <====== (x-prompt)

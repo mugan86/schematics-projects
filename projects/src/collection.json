@@ -7,7 +7,8 @@
     },
     "create-file": {
       "description": "Schematic to work with create files option",
-      "factory": "./01-create-file/index#createFile"
+      "factory": "./01-create-file/index#createFile",
+      "schema": "./01-create-file/schema.json"
     }
   }
 }

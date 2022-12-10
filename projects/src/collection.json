@@ -1,0 +1,13 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "my-logging": {
+      "description": "Schematics to work with Logging.",
+      "factory": "./00-my-logging/index#myLogging"
+    },
+    "create-file": {
+      "description": "Schematic to work with create files option",
+      "factory": "./01-create-file/index#createFile"
+    }
+  }
+}

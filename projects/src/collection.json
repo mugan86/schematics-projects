@@ -15,7 +15,7 @@
       "description": "A blank schematic.",
       "factory": "./02-prompts-depth/index#promptsDepth",
       "schema": "./02-prompts-depth/schema.json",
-      "aliases": ["p-data"]
+      "aliases": ["prompt"]
     }
   }
 }

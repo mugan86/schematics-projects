@@ -4,10 +4,20 @@
     "title": "Work with prompts options in Depth",
     "type": "object",
     "properties": {
-      "path": {
+      "ngOnDestroy": {
+        "type": "boolean",
+        "x-prompt": "Add ngOnDestroy?",
+        "description": "Question about use ngOnDestroy function with log."
+      },
+      "name": {
         "type": "string",
-        "x-prompt": "Enter the file path:",
-        "description": "The path of the file to create."
+        "x-prompt": "What´s your name?",
+        "description": "Input our first name"
+      },
+      "startPoints": {
+        "type": "string",
+        "description": "Format only a segment of a file.",
+        "default": 100
       }
     }
   }

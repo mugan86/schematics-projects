@@ -44,6 +44,60 @@ In the short form, the type is inferred from the property's type and constraints
 |"type": "integer"	| input (only valid numbers accepted)
 |"enum": […]	| list (enum members become list selections)
 
+Examples with real examples:
+
+### Confirmation
+
+* type = boolean
+
+```json
+{
+    ...
+    "ngOnDestroy": {
+        "type": "boolean",
+        "x-prompt": "Add ngOnDestroy?",
+        "description": "Question about use ngOnDestroy function with log."
+    }
+}
+```
+In terminal:
+
+!["Type boolean option"](screens/01-confirmation-type-boolean.png)
+
+### Input
+* type = string
+
+```json
+{
+    ...
+    "name": {
+        "type": "string",
+        "x-prompt": "What´s your name?",
+        "description": "Input our first name"
+    }
+}
+```
+In terminal:
+
+!["Type boolean option"](screens/01-confirmation-type-boolean.png)
+
+* type = number
+
+```json
+{
+    ...
+    "height": {
+        "type": "number",
+        "description": "Question about use ngOnDestroy function with log.",
+        "default": 100
+    }
+}
+```
+In terminal:
+
+!["Type boolean option"](screens/01-confirmation-type-boolean.png)
+
+
 In the following example, the property takes an enumerated value, so the schematic automatically chooses the list type, and creates a menu from the possible values.
 
 ```json
@@ -71,6 +125,8 @@ The x-prompt field syntax supports a long form for cases where you require addit
 | type | confirmation, input, or list (selected automatically in short form)
 | message |	string (required)
 | items	 | string and/or label/value object pair (only valid with type list)
+
+
 The following example of the long form is from the JSON schema for the schematic that the CLI uses to generate applications. It defines the prompt that lets users choose which style preprocessor they want to use for the application being created. By using the long form, the schematic can provide more explicit formatting of the menu choices.
 
 ```json
